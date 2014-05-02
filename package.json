@@ -1,0 +1,20 @@
+{
+    "name": "booking",
+    "description": "Booking node.js wrapper.",
+    "version": "0.0.1",
+    "_id": "booking@0.0.1",
+    "dependencies": {
+        "request": "latest"
+    },
+    "devDependencies": {},
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/lastroom/booking-node"
+    },
+    "main": "./booking.js",
+    "engines": {
+        "node": ">=0.10.15"
+    },
+    "optionalDependencies": {},
+    "scripts": {}
+}
