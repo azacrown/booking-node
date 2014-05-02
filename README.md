@@ -1,4 +1,4 @@
-Expedia node.js wrapper
+Booking node.js wrapper
 ====
 
 ## Install
