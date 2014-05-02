@@ -24,3 +24,7 @@ Booking.photos({}, callback);
 Booking.book({}, callback);
 Booking.booking({}, callback);
 ```
+
+## Examples
+
+See test.js for examples.
