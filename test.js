@@ -1,9 +1,20 @@
 var Booking = require('./booking.js');
 
 Booking.init({
-    username: 'username',
-    password:'password'
+    username: 'lastroom',
+    password:'gioroom35'
 });
+
+/*
+//Return info of hotel(s)
+Booking.hotelInfo({
+    hotel_ids: '24177,78188',
+    languagecodes: 'es'
+}, function(err, resp){
+    console.log('ERROR:', err);
+    console.log('RESPUESTA:', resp);
+});
+*/
 
 /*
 //Return availability of hotel(s)
