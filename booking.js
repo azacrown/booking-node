@@ -28,6 +28,25 @@ Booking.prototype.hotelInfo = function(params, callback) {
     });
 }
 
+Booking.prototype.hotelFacilities = function(params, callback) {
+    request.get(this.base_url+'bookings.getHotelFacilities', {
+        auth: {
+            username: this.username,
+            password: this.password,
+            sendImmediately: false
+        },
+        qs:params
+    }, function(err, req, body) {
+        if(req.statusCode == 401) {
+            var result = {error: "Authorization required"};
+            callback(err, result);
+            return;
+        }
+        var result = JSON.parse(body);
+        callback(err, result);
+    });
+}
+
 Booking.prototype.avail = function(params, callback) {
     params.include_internet = 1;
     request.get(this.base_url+'bookings.getHotelAvailability', {
