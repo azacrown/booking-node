@@ -17,6 +17,17 @@ Booking.hotelInfo({
 */
 
 /*
+//Return facilities of hotel(s)
+Booking.hotelFacilities({
+    hotel_ids: '24177,78188',
+    languagecodes: 'es'
+}, function(err, resp){
+    console.log('ERROR:', err);
+    console.log('RESPUESTA:', resp);
+});
+*/
+
+/*
 //Return availability of hotel(s)
 Booking.avail({
     currency_code: 'MXN',
