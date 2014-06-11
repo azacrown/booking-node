@@ -16,6 +16,7 @@ Booking.prototype.hotelInfo = function(params, callback) {
             password: this.password,
             sendImmediately: false
         },
+        strictSSL: false,
         qs:params
     }, function(err, req, body) {
         if(req.statusCode == 401) {
@@ -35,6 +36,7 @@ Booking.prototype.hotelFacilities = function(params, callback) {
             password: this.password,
             sendImmediately: false
         },
+        strictSSL: false,
         qs:params
     }, function(err, req, body) {
         if(req.statusCode == 401) {
@@ -55,6 +57,7 @@ Booking.prototype.avail = function(params, callback) {
             password: this.password,
             sendImmediately: false
         },
+        strictSSL: false,
         qs:params
     }, function(err, req, body) {
         if(req.statusCode == 401) {
@@ -74,6 +77,7 @@ Booking.prototype.block = function(params, callback) {
             password: this.password,
             sendImmediately: false
         },
+        strictSSL: false,
         qs:params
     }, function(err, req, body) {
         if(req.statusCode == 401) {
@@ -94,6 +98,7 @@ Booking.prototype.rooms = function(params, callback) {
             password: this.password,
             sendImmediately: false
         },
+        strictSSL: false,
         qs: params
     }, function(err, req, body) {
         if(req.statusCode == 401) {
@@ -113,6 +118,7 @@ Booking.prototype.info = function(params, callback) {
             password: this.password,
             sendImmediately: false
         },
+        strictSSL: false,
         qs: params
     }, function(err, req, body){
         if(req.statusCode == 401) {
@@ -132,6 +138,7 @@ Booking.prototype.photos = function(params,callback){
             password: this.password,
             sendImmediately: false
         },
+        strictSSL: false,
         qs: params
     }, function(err, req, body){
         if(req.statusCode == 401) {
@@ -152,6 +159,7 @@ Booking.prototype.book = function(params, callback) {
             password: this.password,
             sendImmediately: false
         },
+        strictSSL: false,
         form: params
     }, function(err, req, body){
         if(req.statusCode == 401) {
@@ -171,6 +179,7 @@ Booking.prototype.booking = function(params, callback) {
             password: this.password,
             sendImmediately: false
         },
+        strictSSL: false,
         qs: params
     }, function(err, req, body) {
         if(req.statusCode == 401) {
