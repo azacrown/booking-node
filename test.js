@@ -1,8 +1,8 @@
 var Booking = require('./booking.js');
 
 Booking.init({
-    username: 'lastroom',
-    password:'gioroom35'
+    username: 'username',
+    password:'password'
 });
 
 /*
