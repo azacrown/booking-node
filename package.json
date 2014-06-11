@@ -1,8 +1,8 @@
 {
     "name": "booking",
     "description": "Booking node.js wrapper.",
-    "version": "0.0.1",
-    "_id": "booking@0.0.1",
+    "version": "0.0.4",
+    "_id": "booking@0.0.4",
     "dependencies": {
         "request": "latest"
     },
