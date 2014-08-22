@@ -3,7 +3,11 @@ var Booking = require('./booking.js');
 
 Booking.init({
     username: 'username',
+<<<<<<< HEAD
     password: 'password'
+=======
+    password:'password'
+>>>>>>> b6a1c5bf83d7a8841984ec34390e341f32e9dda7
 });
 */
 
