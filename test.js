@@ -1,9 +1,11 @@
+/*
 var Booking = require('./booking.js');
 
 Booking.init({
     username: 'username',
-    password:'password'
+    password: 'password'
 });
+*/
 
 /*
 //Return info of hotel(s)
@@ -75,6 +77,17 @@ Booking.info({
 /*
 //Return photos of hotel
 Booking.photos({
+    hotel_ids: '98251',//Array of ids. Example: 98251,777196,472805
+    show_test: 1
+}, function(err, resp){
+    console.log('ERROR:', err);
+    console.log('RESPUESTA:', resp);
+});
+*/
+
+/*
+//Return room photos of hotel
+Booking.roomPhotos({
     hotel_ids: '98251',//Array of ids. Example: 98251,777196,472805
     show_test: 1
 }, function(err, resp){

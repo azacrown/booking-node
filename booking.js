@@ -10,7 +10,7 @@ Booking.prototype.init = function(params) {
 }
 
 Booking.prototype.hotelInfo = function(params, callback) {
-    request.get(this.base_url+'bookings.getHotels', {
+    request.get(this.base_url + 'bookings.getHotels', {
         auth: {
             username: this.username,
             password: this.password,
@@ -30,7 +30,7 @@ Booking.prototype.hotelInfo = function(params, callback) {
 }
 
 Booking.prototype.hotelFacilities = function(params, callback) {
-    request.get(this.base_url+'bookings.getHotelFacilities', {
+    request.get(this.base_url + 'bookings.getHotelFacilities', {
         auth: {
             username: this.username,
             password: this.password,
@@ -51,7 +51,7 @@ Booking.prototype.hotelFacilities = function(params, callback) {
 
 Booking.prototype.avail = function(params, callback) {
     params.include_internet = 1;
-    request.get(this.base_url+'bookings.getHotelAvailability', {
+    request.get(this.base_url + 'bookings.getHotelAvailability', {
         auth: {
             username: this.username,
             password: this.password,
@@ -71,7 +71,7 @@ Booking.prototype.avail = function(params, callback) {
 };
 
 Booking.prototype.block = function(params, callback) {
-    request.get(this.base_url+'bookings.getBlockAvailability', {
+    request.get(this.base_url + 'bookings.getBlockAvailability', {
         auth: {
             username: this.username,
             password: this.password,
@@ -92,7 +92,7 @@ Booking.prototype.block = function(params, callback) {
 
 
 Booking.prototype.rooms = function(params, callback) {
-    request.get(this.base_url+'bookings.getRooms', {
+    request.get(this.base_url + 'bookings.getRooms', {
         auth: {
             username: this.username,
             password: this.password,
@@ -112,7 +112,7 @@ Booking.prototype.rooms = function(params, callback) {
 }
 
 Booking.prototype.info = function(params, callback) {
-    request.get(this.base_url+'bookings.getHotelDescriptionTranslations', {
+    request.get(this.base_url + 'bookings.getHotelDescriptionTranslations', {
         auth: {
             username: this.username,
             password: this.password,
@@ -132,7 +132,7 @@ Booking.prototype.info = function(params, callback) {
 }
 
 Booking.prototype.photos = function(params,callback){
-    request.get(this.base_url+'bookings.getHotelPhotos', {
+    request.get(this.base_url + 'bookings.getHotelPhotos', {
         auth: {
             username: this.username,
             password: this.password,
@@ -140,7 +140,27 @@ Booking.prototype.photos = function(params,callback){
         },
         strictSSL: false,
         qs: params
-    }, function(err, req, body){
+    }, function(err, req, body) {
+        if(req.statusCode == 401) {
+            var result = {error: "Authorization required"};
+            callback(err, result);
+            return;
+        }
+        var result = JSON.parse(body);
+        callback(err, result);
+    });
+}
+
+Booking.prototype.roomPhotos = function(params, callback) {
+    request.get(this.base_url + 'bookings.getRoomPhotos', {
+        auth: {
+            username: this.username,
+            password: this.password,
+            sendImmediately: false
+        },
+        strictSSL: false,
+        qs: params
+    }, function(err, req, body) {
         if(req.statusCode == 401) {
             var result = {error: "Authorization required"};
             callback(err, result);
@@ -153,7 +173,7 @@ Booking.prototype.photos = function(params,callback){
 
 Booking.prototype.book = function(params, callback) {
     var booking_url = this.base_url.replace('distribution','secure-distribution');
-    request.post(booking_url+'bookings.processBooking', {
+    request.post(booking_url + 'bookings.processBooking', {
         auth: {
             username: this.username,
             password: this.password,
@@ -173,7 +193,7 @@ Booking.prototype.book = function(params, callback) {
 }
 
 Booking.prototype.booking = function(params, callback) {
-    request.get(this.base_url+'bookings.getBookingDetails', {
+    request.get(this.base_url + 'bookings.getBookingDetails', {
         auth: {
             username: this.username,
             password: this.password,
